@@ -11,8 +11,10 @@ This repository includes a production-oriented backend scaffold and architecture
 - Inventory optimization decision endpoints (baseline + history-driven Monte Carlo)
 - Celery async task stub for forecast jobs
 - Production blueprint (`docs/BRIDGATON_AI_PRODUCTION_BLUEPRINT.md`)
+- Next execution plan (`docs/NEXT_STEPS_EXECUTION_PLAN.md`)
 - Multi-tenant PostgreSQL schema baseline (`db/schema.sql`)
 - Containerization assets (`Dockerfile`, `docker-compose.yml`, `.env.example`)
+- CI workflow (`.github/workflows/ci.yml`)
 
 ## Configuration
 
@@ -51,3 +53,13 @@ docker compose up --build
 - `POST /forecast/async`
 - `POST /decision`
 - `POST /decision/from-history`
+
+## Quality checks
+
+```bash
+make check
+```
+
+This runs:
+- `python -m compileall app`
+- `python scripts/smoke_check.py`
