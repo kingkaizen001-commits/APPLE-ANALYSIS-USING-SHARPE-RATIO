@@ -9,8 +9,11 @@ This repository includes a production-oriented backend scaffold and architecture
 - Data ingestion validation endpoint
 - Forecasting facade with model-selection contract
 - Inventory optimization decision endpoints (baseline + history-driven Monte Carlo)
-- Celery async task stub for forecast jobs
+- ML training integration seam (`/ml/train`) with Celery task stub
+- Alerts evaluation and reporting summary endpoints
+- Celery async task stubs for forecast jobs and model training
 - Production blueprint (`docs/BRIDGATON_AI_PRODUCTION_BLUEPRINT.md`)
+- Readiness status (`docs/READINESS_STATUS.md`)
 - Next execution plan (`docs/NEXT_STEPS_EXECUTION_PLAN.md`)
 - Multi-tenant PostgreSQL schema baseline (`db/schema.sql`)
 - Containerization assets (`Dockerfile`, `docker-compose.yml`, `.env.example`)
@@ -51,8 +54,11 @@ docker compose up --build
 - `POST /ingestion/validate`
 - `POST /forecast`
 - `POST /forecast/async`
+- `POST /ml/train`
 - `POST /decision`
 - `POST /decision/from-history`
+- `POST /alerts/evaluate`
+- `POST /reports/decision-summary`
 
 ## Quality checks
 

@@ -78,5 +78,44 @@ class DecisionResponse(BaseModel):
     model_provenance: Dict[str, str]
 
 
+class AlertRequest(BaseModel):
+    sku: str
+    stockout_probability: float = Field(..., ge=0, le=1)
+    coverage_days: int = Field(..., ge=0)
+    overstock_days: int = Field(default=0, ge=0)
+    lead_time_variability: float = Field(default=0.0, ge=0)
+
+
+class AlertItem(BaseModel):
+    severity: str
+    code: str
+    message: str
+
+
+class AlertResponse(BaseModel):
+    sku: str
+    total_alerts: int
+    alerts: List[AlertItem]
+
+
+class ReportRequest(BaseModel):
+    organization_id: int = Field(..., ge=1)
+    period_start: date
+    period_end: date
+    sku_count: int = Field(..., ge=0)
+    stockout_probabilities: List[float] = Field(default_factory=list)
+    profit_delta_pcts: List[float] = Field(default_factory=list)
+
+
+class DecisionSummaryReport(BaseModel):
+    organization_id: int
+    period_start: date
+    period_end: date
+    sku_count: int
+    average_stockout_probability: float
+    average_profit_delta_pct: float
+    generated_status: str
+
+
 class HealthResponse(BaseModel):
     status: str

@@ -11,6 +11,9 @@ REQUIRED_FILES = [
     "app/api/routes.py",
     "app/services/forecasting.py",
     "app/services/optimization.py",
+    "app/services/ml_pipeline.py",
+    "app/services/alerts.py",
+    "app/services/reporting.py",
     "app/tasks/celery_app.py",
     "db/schema.sql",
     "docs/NEXT_STEPS_EXECUTION_PLAN.md",
@@ -22,6 +25,9 @@ REQUIRED_ENDPOINT_MARKERS = [
     '"/forecast"',
     '"/decision"',
     '"/decision/from-history"',
+    '"/ml/train"',
+    '"/alerts/evaluate"',
+    '"/reports/decision-summary"',
 ]
 
 
