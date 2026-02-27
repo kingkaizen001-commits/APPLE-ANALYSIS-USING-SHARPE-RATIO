@@ -14,6 +14,7 @@ This repository includes a production-oriented backend scaffold and architecture
 - Celery async task stubs for forecast jobs and model training
 - Production blueprint (`docs/BRIDGATON_AI_PRODUCTION_BLUEPRINT.md`)
 - Readiness status (`docs/READINESS_STATUS.md`)
+- Architecture audit (`docs/ARCHITECTURE_GAP_AUDIT.md`)
 - Next execution plan (`docs/NEXT_STEPS_EXECUTION_PLAN.md`)
 - Multi-tenant PostgreSQL schema baseline (`db/schema.sql`)
 - Containerization assets (`Dockerfile`, `docker-compose.yml`, `.env.example`)
@@ -46,11 +47,13 @@ docker compose up --build
 - Public endpoints:
   - `GET /health`
   - `GET /meta/platform`
+  - `GET /meta/architecture`
 
 ## Endpoints
 
 - `GET /health`
 - `GET /meta/platform`
+  - `GET /meta/architecture`
 - `POST /ingestion/validate`
 - `POST /forecast`
 - `POST /forecast/async`

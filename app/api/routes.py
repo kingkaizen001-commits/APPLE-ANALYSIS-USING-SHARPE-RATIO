@@ -53,6 +53,31 @@ def platform_meta() -> dict:
     }
 
 
+@router.get("/meta/architecture")
+def architecture_meta() -> dict:
+    return {
+        "status": "baseline_ready",
+        "implemented": [
+            "fastapi_api",
+            "postgres_schema_baseline",
+            "celery_redis_tasks",
+            "forecast_quantiles",
+            "monte_carlo_decision_path",
+            "alerts_endpoint",
+            "reporting_endpoint",
+            "docker_stack",
+        ],
+        "pending_for_full_production": [
+            "jwt_rbac",
+            "tenant_enforcement_middleware",
+            "orm_persistence_migrations",
+            "async_job_status_api",
+            "s3_artifact_storage",
+            "shap_model_explainability",
+        ],
+    }
+
+
 @secure_router.post("/ingestion/validate", response_model=IngestionSummary)
 def validate_ingestion(payload: IngestionRequest) -> IngestionSummary:
     return summarize_ingestion(payload.records)

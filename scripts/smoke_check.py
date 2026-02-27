@@ -17,11 +17,13 @@ REQUIRED_FILES = [
     "app/tasks/celery_app.py",
     "db/schema.sql",
     "docs/NEXT_STEPS_EXECUTION_PLAN.md",
+    "docs/ARCHITECTURE_GAP_AUDIT.md",
 ]
 
 REQUIRED_ENDPOINT_MARKERS = [
     '"/health"',
     '"/meta/platform"',
+    '"/meta/architecture"',
     '"/forecast"',
     '"/decision"',
     '"/decision/from-history"',
