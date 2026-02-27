@@ -16,6 +16,7 @@ This repository includes a production-oriented backend scaffold and architecture
 - Readiness status (`docs/READINESS_STATUS.md`)
 - Architecture audit (`docs/ARCHITECTURE_GAP_AUDIT.md`)
 - Next execution plan (`docs/NEXT_STEPS_EXECUTION_PLAN.md`)
+- Testing playbook (`docs/TESTING_PHASE_PLAYBOOK.md`)
 - Multi-tenant PostgreSQL schema baseline (`db/schema.sql`)
 - Containerization assets (`Dockerfile`, `docker-compose.yml`, `.env.example`)
 - CI workflow (`.github/workflows/ci.yml`)
@@ -72,3 +73,13 @@ make check
 This runs:
 - `python -m compileall app`
 - `python scripts/smoke_check.py`
+
+## Runtime sanity check
+
+Start the API first, then run:
+
+```bash
+make sanity
+```
+
+This executes `scripts/api_sanity_check.py` against `/api/v1`.

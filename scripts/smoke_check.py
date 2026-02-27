@@ -18,6 +18,8 @@ REQUIRED_FILES = [
     "db/schema.sql",
     "docs/NEXT_STEPS_EXECUTION_PLAN.md",
     "docs/ARCHITECTURE_GAP_AUDIT.md",
+    "docs/TESTING_PHASE_PLAYBOOK.md",
+    "scripts/api_sanity_check.py",
 ]
 
 REQUIRED_ENDPOINT_MARKERS = [
