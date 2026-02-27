@@ -19,6 +19,7 @@ REQUIRED_FILES = [
     "docs/NEXT_STEPS_EXECUTION_PLAN.md",
     "docs/ARCHITECTURE_GAP_AUDIT.md",
     "docs/TESTING_PHASE_PLAYBOOK.md",
+    "docs/VSCODE_IMPORT_GUIDE.md",
     "scripts/api_sanity_check.py",
 ]
 

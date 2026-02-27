@@ -17,9 +17,23 @@ This repository includes a production-oriented backend scaffold and architecture
 - Architecture audit (`docs/ARCHITECTURE_GAP_AUDIT.md`)
 - Next execution plan (`docs/NEXT_STEPS_EXECUTION_PLAN.md`)
 - Testing playbook (`docs/TESTING_PHASE_PLAYBOOK.md`)
+- VS Code import guide (`docs/VSCODE_IMPORT_GUIDE.md`)
 - Multi-tenant PostgreSQL schema baseline (`db/schema.sql`)
 - Containerization assets (`Dockerfile`, `docker-compose.yml`, `.env.example`)
 - CI workflow (`.github/workflows/ci.yml`)
+
+
+## Getting this into VS Code
+
+If you are stuck getting the files into VS Code, follow:
+
+- `docs/VSCODE_IMPORT_GUIDE.md`
+
+It includes:
+- Git clone method (recommended)
+- Manual copy/zip fallback
+- Windows/macOS/Linux commands
+- common setup fixes
 
 ## Configuration
 
